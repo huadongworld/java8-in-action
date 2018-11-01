@@ -15,6 +15,7 @@ public class Section1 {
          */
         File[] hiddenFiles = new File(".").listFiles(
                 new FileFilter() {
+                    @Override
                     public boolean accept(File file) {
                         return file.isHidden();
                     }
