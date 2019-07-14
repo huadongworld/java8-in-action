@@ -202,9 +202,19 @@ public class Section5 {
 
     }
 
+    @Test
+    public void demo011() {
+        List<Transaction> transactions = Arrays.asList();
+        List<Trader> traders = transactions
+                .stream()
+                .map(Transaction::getTrader)
+                .collect(toList());
+    }
+
     /**
      * 流 实战
      */
+    @Test
     public void Demo05() {
 
         Trader raoul = new Trader("Raoul", "Cambridge");
@@ -292,11 +302,11 @@ public class Section5 {
                 .map(transaction -> transaction.getTrader().getName())
                 .distinct()
                 .sorted()
-                .reduce("", (s1, s2) -> s1 + s2);
+                .reduce("", (s1, s2) -> s1 + "," + s2);
 
         //以上拼接字符串的方式并不高效，一下是改进方案
         String names2 = transactions.stream()
-                .map(transaction -> transaction.getTrader().getName()                      )
+                .map(transaction -> transaction.getTrader().getName())
                 .distinct()
                 .sorted()
                 .collect(joining());
@@ -367,7 +377,6 @@ public class Section5 {
                 .filter(trader -> trader.getName().equals("Cambridge"))
                 .sorted()
                 .collect(toList());
-
 
         //返回所有交易员的姓名字符串，按字母排序
         String names = transactions.stream()

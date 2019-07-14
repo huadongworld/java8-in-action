@@ -12,6 +12,8 @@ import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static java.time.temporal.TemporalAdjusters.*;
 
@@ -325,4 +327,32 @@ public class Section12 {
             }
         }
     }
+
+    @Test
+    public void demo10() throws ParseException {
+        LocalDate today = LocalDate.now();
+        System.out.println(today);
+        LocalDate yesterday = today.minusDays(1);
+        System.out.println(yesterday);
+
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String nowStr = yesterday.format(format);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = sdf.parse(nowStr);
+        System.out.println(date);
+    }
+
+    @Test
+    public void demo11() {
+        String content = "123rrRcD3";
+        String key = "rr";
+        Integer start = content.toLowerCase().indexOf(key.toLowerCase());
+        Integer keyLength = key.length();
+        String heightKey = content.substring(start, start + keyLength);
+
+        System.out.println(start);
+        System.out.println(keyLength);
+        System.out.println(heightKey);
+    }
+
 }
