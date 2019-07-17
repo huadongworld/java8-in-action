@@ -44,5 +44,8 @@ public class ThreadLocalTest {
                 TEST_THREAD_LOCAL.remove();
             });
         }
+
+        //记得关闭线程池
+        executor.shutdown();
     }
 }

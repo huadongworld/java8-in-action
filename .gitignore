@@ -20,6 +20,7 @@ lib
 classes
 *.class
 **/*.class
+misc.xml
 
 # default HSQL database files for production mode
 /prodDb.*

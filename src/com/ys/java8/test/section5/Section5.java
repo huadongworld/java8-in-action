@@ -1,5 +1,6 @@
 package com.ys.java8.test.section5;
 
+import com.sun.deploy.util.StringUtils;
 import com.ys.java8.test.section6.Trader;
 import com.ys.java8.test.section6.Transaction;
 import org.junit.Test;
@@ -14,6 +15,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Comparator.comparing;
+import static java.util.Comparator.nullsFirst;
 import static java.util.stream.Collectors.*;
 
 /**
@@ -568,6 +570,15 @@ public class Section5 {
                 .map(String::length)
                 .reduce(0, (a, b) -> a + b);
 
+    }
+
+    @Test
+    public void demo() {
+        System.out.println(convertVersion("123456"));
+    }
+
+    private String convertVersion(String version) {
+        return StringUtils.join(Arrays.asList(version.split("")), ".");
     }
 
 }
