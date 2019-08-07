@@ -1,7 +1,9 @@
 package com.ys.java8.test;
 
+import com.ys.java8.test.utils.DateUtil;
 import org.junit.Test;
 
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -47,5 +49,10 @@ public class ThreadLocalTest {
 
         //记得关闭线程池
         executor.shutdown();
+    }
+
+    @Test
+    public void demo() {
+        System.out.println(DateUtil.getTimeStamp(new Date()));
     }
 }
