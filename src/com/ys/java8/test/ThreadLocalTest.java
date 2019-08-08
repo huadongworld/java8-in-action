@@ -1,6 +1,5 @@
 package com.ys.java8.test;
 
-import com.ys.java8.test.utils.DateUtil;
 import org.junit.Test;
 
 import java.util.Date;
@@ -53,6 +52,41 @@ public class ThreadLocalTest {
 
     @Test
     public void demo() {
-        System.out.println(DateUtil.getTimeStamp(new Date()));
+        System.out.println(differ(new Date(2019, 10, 03), new Date(2019, 10, 02), 0));
+        System.out.println(differ(new Date(), new Date(), 4));
+        System.out.println(differ(new Date(), new Date(), 5));
+        System.out.println(differ(new Date(), new Date(), 6));
+        System.out.println(differ(new Date(), new Date(), 7));
+    }
+
+    /**
+     * 计算两个时间相差的 年/月/日/时/分/秒数
+     *
+     * @param firstDate
+     * @param secondDate
+     * @param unit       枚举类 TimeUnit 对应的值 (无法依赖TimeUnit所在模块)
+     * @return
+     */
+    public static Integer differ(Date firstDate, Date secondDate, Integer unit) {
+
+        Long firstTime = firstDate.getTime();
+        Long secondTime = secondDate.getTime();
+
+        switch (unit) {
+            // 天
+            case 0:
+                return (int) (firstTime - secondTime) / (1000 * 60 * 60 * 24);
+            // 时
+            case 4:
+                return (int) (firstTime - secondTime) / (1000 * 60 * 60);
+            // 分
+            case 5:
+                return (int) (firstTime - secondTime) / (1000 * 60);
+            // 秒
+            case 6:
+                return (int) (firstTime - secondTime) / (1000);
+            default:
+                throw new RuntimeException("不支持的时间单位");
+        }
     }
 }
