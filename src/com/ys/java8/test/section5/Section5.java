@@ -6,9 +6,11 @@ import com.ys.java8.test.section6.Transaction;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.function.IntSupplier;
 import java.util.stream.IntStream;
@@ -574,11 +576,35 @@ public class Section5 {
 
     @Test
     public void demo() {
-        System.out.println(convertVersion("123456"));
+        BigDecimal number = new BigDecimal(199.00);
+        System.out.println(number);
+        BigDecimal newNumber = number.setScale(0, BigDecimal.ROUND_HALF_UP);
+        System.out.println(newNumber);
+        DecimalFormat format = new DecimalFormat("###");
+        System.out.println(format.format(number));
+
+        BigDecimal b = new BigDecimal("1.6");
+        System.out.println(b.intValue());
+
+        System.out.println(new BigDecimal("1").compareTo(new BigDecimal("1")));
     }
 
     private String convertVersion(String version) {
         return StringUtils.join(Arrays.asList(version.split("")), ".");
     }
 
+    private BigDecimal dealPrice(BigDecimal originPrice) {
+
+        //如果是整数，去除末尾“.00”小数位
+        if (new BigDecimal(originPrice.intValue()).compareTo(originPrice) == 0) {
+            return new BigDecimal(originPrice.intValue());
+        } else {
+            return originPrice;
+        }
+    }
+
+    @Test
+    public void demo02() {
+        System.out.println(Math.random());
+    }
 }
