@@ -26,13 +26,12 @@ public class JConsoleDemo {
             Thread.sleep(50);
             list.add(new OOMObject());
         }
-
-        System.gc();
     }
 
     @Test
     public void demo() throws InterruptedException {
-        fillHeap(1000);
+        fillHeap(1500);
+        System.gc();
     }
 
     /**
