@@ -17,23 +17,37 @@ public class CSDN {
 
     public CSDN() {
         urls = Arrays.asList(
-                "https://blog.csdn.net/qq_36221788/article/details/100655660",
-                "https://blog.csdn.net/qq_36221788/article/details/94564333",
-                "https://blog.csdn.net/qq_36221788/article/details/94884591",
-                "https://blog.csdn.net/qq_36221788/article/details/97249724",
-                "https://blog.csdn.net/qq_36221788/article/details/98625693",
-                "https://blog.csdn.net/qq_36221788/article/details/100184076",
-                "https://blog.csdn.net/qq_36221788/article/details/99614973",
-                "https://blog.csdn.net/qq_36221788/article/details/97876366",
                 "https://blog.csdn.net/qq_36221788/article/details/100292015",
-                "https://blog.csdn.net/qq_36221788/article/details/100584500"
+                "https://blog.csdn.net/qq_36221788/article/details/100292015",
+                "https://blog.csdn.net/qq_36221788/article/details/100292015",
+                "https://blog.csdn.net/qq_36221788/article/details/100292015",
+                "https://blog.csdn.net/qq_36221788/article/details/100292015",
+                "https://blog.csdn.net/qq_36221788/article/details/94884591",
+                "https://blog.csdn.net/qq_36221788/article/details/94884591",
+                "https://blog.csdn.net/qq_36221788/article/details/94564333",
+                "https://blog.csdn.net/qq_36221788/article/details/100584500",
+                "https://blog.csdn.net/qq_36221788/article/details/100584500",
+                "https://blog.csdn.net/qq_36221788/article/details/96264024",
+                "https://blog.csdn.net/qq_36221788/article/details/96264024",
+                "https://blog.csdn.net/qq_36221788/article/details/95000394",
+                "https://blog.csdn.net/qq_36221788/article/details/95000394",
+                "https://blog.csdn.net/qq_36221788/article/details/101065959",
+                "https://blog.csdn.net/qq_36221788/article/details/98581206",
+                "https://blog.csdn.net/qq_36221788/article/details/96026796",
+                "https://blog.csdn.net/qq_36221788/article/details/100856454",
+                "https://blog.csdn.net/qq_36221788/article/details/100770521",
+                "https://blog.csdn.net/qq_36221788/article/details/100770521",
+                "https://blog.csdn.net/qq_36221788/article/details/100941672",
+                "https://blog.csdn.net/qq_36221788/article/details/100941672",
+                "https://blog.csdn.net/qq_36221788/article/details/100941672",
+                "https://blog.csdn.net/qq_36221788/article/details/100862661"
         );
     }
 
     public static void randomUrl() {
 
         Random random = new Random();
-        int index = random.nextInt(9) + 1;
+        int index = random.nextInt(24);
 
         System.out.println(index);
 
@@ -60,14 +74,19 @@ public class CSDN {
             in = new BufferedReader(new InputStreamReader(u.openStream(), "UTF-8"));
             while (true) {
                 String s = in.readLine();
-                if (s == null) break;
-                else str.append(s);
+                if (s == null) {
+                    break;
+                } else {
+                    str.append(s);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
             try {
-                if (in != null) in.close();
+                if (in != null) {
+                    in.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -133,30 +152,59 @@ public class CSDN {
         // socks代理服务器的地址与端口
         prop.setProperty("socksProxyHost", ip);
         prop.setProperty("socksProxyPort", dk);
-        System.out.println("ip:" + ip + " :" + dk);
     }
 
     public static String[] dl = {
-            "114.237.62.5:4256",
-            "117.69.129.53:4226",
-            "180.123.205.63:4243",
-            "218.72.6.189:4263",
-            "114.103.169.131:4235",
-            "49.79.66.6:4256",
-            "182.34.33.26:4234",
-            "112.113.156.50:4256",
-            "114.237.57.27:4256",
-            "36.57.91.103:4226",
-//            "119.5.224.191:4282",
-            "119.85.4.74:4242",
-//            "114.228.249.240:4275",
-            "125.121.118.161:4265",
-            "183.166.7.119:4251",
-            "60.172.71.194:4270",
-            "114.105.172.22:4287",
-            "60.185.203.54:4226",
-            "114.102.37.10:4231",
-            "114.239.148.239:4258"
+            "58.218.201.122:8782",
+            "58.218.201.122:8785",
+            "58.218.201.122:9104",
+            "58.218.201.122:9153",
+            "58.218.201.74:9168",
+            "58.218.201.114:8776",
+            "58.218.201.122:8759",
+            "58.218.201.122:9167",
+            "58.218.201.122:9132",
+            "58.218.200.253:9152",
+            "58.218.200.214:9106",
+            "58.218.200.253:9346",
+            "58.218.201.122:9120",
+            "58.218.200.214:8951",
+            "58.218.201.122:8794",
+            "58.218.201.122:8950",
+            "58.218.200.220:6171",
+            "58.218.200.214:8754",
+            "58.218.201.74:9184",
+            "58.218.201.114:8790",
+            "58.218.201.122:9199",
+            "58.218.200.253:9590",
+            "58.218.201.122:8938",
+            "58.218.200.253:9182",
+            "58.218.200.214:8784",
+            "58.218.200.214:8780",
+            "58.218.201.122:8914",
+            "58.218.201.122:8962",
+            "58.218.201.122:8905",
+            "58.218.201.122:9154",
+            "58.218.200.253:9582",
+            "58.218.201.122:8932",
+            "58.218.201.122:8791",
+            "58.218.201.122:8987",
+            "58.218.200.253:9175",
+            "58.218.201.122:8940",
+            "58.218.201.122:8930",
+            "58.218.201.122:8981",
+            "58.218.201.122:8924",
+            "58.218.200.214:8767",
+            "58.218.200.220:6508",
+            "58.218.200.214:9165",
+            "58.218.201.74:9175",
+            "58.218.200.214:8972",
+            "58.218.201.114:8782",
+            "58.218.201.122:8993",
+            "58.218.201.122:9137",
+            "58.218.201.122:9114",
+            "58.218.201.114:8788",
+            "58.218.201.114:9101"
     };
 
     public static void main(String[] args) {

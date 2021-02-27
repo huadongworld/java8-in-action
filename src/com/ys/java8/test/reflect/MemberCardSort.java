@@ -1,7 +1,7 @@
 package com.ys.java8.test.reflect;
 
 /**
- * User: Frank Tang <br/>
+ * Singleton9: Frank Tang <br/>
  * Date: 15/12/15<br/>
  * Time: 下午9:49<br/>
  * Email: lovefree103@gmail.com<br/>

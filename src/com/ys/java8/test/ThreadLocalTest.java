@@ -1,8 +1,12 @@
 package com.ys.java8.test;
 
+import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -88,5 +92,21 @@ public class ThreadLocalTest {
             default:
                 throw new RuntimeException("不支持的时间单位");
         }
+    }
+
+    @Test
+    public void demo02() {
+        Set<Long> companyIds = new HashSet<>();
+        companyIds.add(1L);
+
+        System.out.println("0" + companyIds.stream().map(String::valueOf).reduce("", (a, b) -> a + "," + b));
+    }
+
+    @Test
+    public void demo03() {
+        BigDecimal a = new BigDecimal(1);
+        BigDecimal b = new BigDecimal(2);
+
+        System.out.println(b.compareTo(a));
     }
 }

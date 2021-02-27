@@ -3,7 +3,7 @@ package com.ys.java8.test.reflect;
 import java.math.BigDecimal;
 
 /**
- * User: Frank Tang <br/>
+ * Singleton9: Frank Tang <br/>
  * Date: 15/12/15<br/>
  * Time: 下午9:34<br/>
  * Email: lovefree103@gmail.com<br/>
