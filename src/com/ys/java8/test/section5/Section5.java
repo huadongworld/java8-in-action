@@ -5,8 +5,11 @@ import com.ys.java8.test.section6.Trader;
 import com.ys.java8.test.section6.Transaction;
 import org.junit.Test;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.math.BigDecimal;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -606,7 +609,56 @@ public class Section5 {
     }
 
     @Test
+    public void demo03() {
+        BufferedImage image = null;
+        try {
+            URL url = new URL("https://wx.qlogo.cn/mmopen/vi_32/iahbZJBP5ZsrEurGR86BwLCmFRMrRqp2Uh6LDaycGeAcU9jicYl8N3KfZEYwnuCwUp9NYdAxibibb6uuAsS7udN62g/132");
+            image = ImageIO.read(url);
+
+            ImageIO.write(image, "jpg", new File("E:\\11.jpg"));
+            ImageIO.write(image, "gif", new File("E:\\11.gif"));
+            ImageIO.write(image, "png", new File("E:\\11.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("完成下载~");
+    }
+
+    @Test
     public void demo02() {
         System.out.println(Math.random());
+    }
+
+
+    @Test
+    public void demo04() {
+        System.out.println(13 % 12);
+        System.out.println(12 % 12);
+        System.out.println(11 % 12);
+        System.out.println(0 % 12);
+    }
+
+    @Test
+    public void demo05() {
+        Calendar calendar = Calendar.getInstance();
+        System.out.println(calendar.getTime());
+        calendar.add(Calendar.HOUR_OF_DAY, -48);
+        System.out.println(calendar.getTime());
+    }
+
+    @Test
+    public void getRandomNum() {
+        while (true) {
+            int i = 8;
+            StringBuilder result = new StringBuilder();
+            while (i-- > 0) {
+                result.append(new Random().nextInt(9));
+            }
+            System.out.println(result.toString());
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(String.valueOf(System.currentTimeMillis()));
     }
 }

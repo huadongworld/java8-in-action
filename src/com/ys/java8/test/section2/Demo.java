@@ -7,7 +7,9 @@ import com.ys.java8.test.section2.model.Apple;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static java.util.Comparator.comparing;
 
@@ -95,6 +97,17 @@ public class Demo {
 
         inventory.sort(comparing(Apple::getWeight));
         inventory.stream().forEach(System.out::println);
+    }
+
+    @Test
+    public void demo06() {
+        List<Long> list = Arrays.asList(1L, 2L, 3L);
+        Set<Long> storeSet = new HashSet<>(list);
+        System.out.println(storeSet.size());
+        System.out.println(storeSet);
+        storeSet.remove(2L);
+        System.out.println(storeSet.size());
+        System.out.println(storeSet);
     }
 
 }
