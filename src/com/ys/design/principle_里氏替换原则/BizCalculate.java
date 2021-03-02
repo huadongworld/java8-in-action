@@ -1,4 +1,4 @@
-package com.ys.design.principle4;
+package com.ys.design.principle_里氏替换原则;
 
 /**
  * @author HuaDong

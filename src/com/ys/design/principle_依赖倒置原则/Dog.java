@@ -1,4 +1,4 @@
-package com.ys.design.principle3;
+package com.ys.design.principle_依赖倒置原则;
 
 /**
  * @author HuaDong

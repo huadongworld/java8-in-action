@@ -1,4 +1,4 @@
-package com.ys.design.principle2;
+package com.ys.design.principle_接口隔离原则;
 
 /**
  * 读者只开放博客阅读接口

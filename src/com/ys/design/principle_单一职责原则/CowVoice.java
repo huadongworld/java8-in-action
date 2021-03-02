@@ -1,4 +1,4 @@
-package com.ys.design.principle1;
+package com.ys.design.principle_单一职责原则;
 
 /**
  * @author HuaDong
