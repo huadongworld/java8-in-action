@@ -6,6 +6,7 @@ package com.ys.design.principle_里氏替换原则;
  */
 public class CalculateDemo {
     public static void main(String[] args) {
-
+        BizCalculate bizCalculate = new BizCalculate();
+        System.out.println(bizCalculate.add(2, 3));
     }
 }
