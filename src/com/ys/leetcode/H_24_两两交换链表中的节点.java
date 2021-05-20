@@ -24,14 +24,12 @@ public class H_24_两两交换链表中的节点 {
     }
 
     public ListNode swapPairs(ListNode head) {
-        ListNode post = head.next;
-        ListNode nextTemp = head.next.next;
-        while (nextTemp != null) {
-            nextTemp = head.next.next;
-            post = head.next;
-            post.next = head;
-            head.next = nextTemp;
+        if(head == null || head.next == null){
+            return head;
         }
-        return post;
+        ListNode next = head.next;
+        head.next = swapPairs(next.next);
+        next.next = head;
+        return next;
     }
 }
