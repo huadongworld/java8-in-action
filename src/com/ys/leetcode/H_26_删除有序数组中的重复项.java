@@ -5,6 +5,13 @@ package com.ys.leetcode;
  * @date 2021/5/20 16:30
  */
 public class H_26_删除有序数组中的重复项 {
+
+    /**
+     * 双指针
+     *
+     * @param nums
+     * @return
+     */
     public int removeDuplicates(int[] nums) {
         if (nums.length == 0) {
             return 0;

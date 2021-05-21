@@ -1,5 +1,8 @@
 package com.ys.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author HuaDong
  * @date 2021/5/19 23:52
@@ -29,6 +32,8 @@ public class H_70_爬楼梯 {
         return temp2;
     }
 
+    Map<Integer, Integer> map = new HashMap<>();
+
     /**
      * F(n) = F(n-1) + F(n-2)
      *
@@ -45,6 +50,14 @@ public class H_70_爬楼梯 {
             return 2;
         }
 
-        return climbStairs(n - 1) + climbStairs(n - 2);
+        if (map.get(n) != null) {
+            return map.get(n);
+        }
+
+        int result = climbStairs(n - 1) + climbStairs(n - 2);
+
+        map.put(n, result);
+
+        return result;
     }
 }
