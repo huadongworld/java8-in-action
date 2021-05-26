@@ -28,10 +28,7 @@ public class H_98_验证二叉搜索树 {
     double last = -Double.MAX_VALUE;
 
     /**
-     * 方法1
-     *
-     * 这个方法很好地将左子节点先与根节点比较(此时isVaildBST方法形参root为根节点)，
-     * 再用根节点与右子节点比较(此时此时isVaildBST方法形参root为右子节点)
+     * 进行中序遍历从左子树开始比较，last每次记录最小值
      *
      * @param root
      * @return
@@ -40,7 +37,10 @@ public class H_98_验证二叉搜索树 {
         if (root == null) {
             return true;
         }
-        if (isValidBST(root.left)) {
+
+        boolean leftIsNull = isValidBST(root.left);
+
+        if (leftIsNull) {
             if (last < root.val) {
                 last = root.val;
                 return isValidBST(root.right);
@@ -68,5 +68,9 @@ public class H_98_验证二叉搜索树 {
             return false;
         }
         return  validate(node.left, min, node.val) && validate(node.right, node.val, max);
+    }
+
+    public boolean isValidBST2(TreeNode root) {
+        return validate(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 }

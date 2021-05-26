@@ -39,7 +39,7 @@ public class H_94_二叉树的中序遍历 {
             return;
         }
         inorder(root.left, res);
-        inorder(root.right, res);
         res.add(root.val);
+        inorder(root.right, res);
     }
 }
