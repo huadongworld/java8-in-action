@@ -60,4 +60,23 @@ public class H_70_爬楼梯 {
 
         return result;
     }
+
+    public int climbStairs3(int n) {
+
+        if (n <= 1) {
+            return 1;
+        }
+
+        int[] board = new int[n];
+        board[0] = 1;
+        board[1] = 2;
+
+        for (int i = 2; i < n; i++) {
+            board[i] = board[i - 1] + board[i - 2];
+        }
+
+        return board[n - 1];
+    }
+
+
 }
